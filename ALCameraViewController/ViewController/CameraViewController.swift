@@ -33,6 +33,7 @@ public extension CameraViewController {
                     }
                 }
                 confirmController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                confirmController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
                 imagePicker?.present(confirmController, animated: true, completion: nil)
             } else {
                 completion(nil, nil)
@@ -534,7 +535,8 @@ open class CameraViewController: UIViewController {
 
             self?.onCompletion?(image, asset)
         }
-        
+        imagePicker.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        imagePicker.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         present(imagePicker, animated: true) { [weak self] in
             self?.cameraView.stopSession()
         }
@@ -586,6 +588,7 @@ open class CameraViewController: UIViewController {
 			self?.onCompletion = nil
 		}
 		confirmViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        confirmViewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
 		present(confirmViewController, animated: true, completion: nil)
 	}
 	
@@ -604,6 +607,7 @@ open class CameraViewController: UIViewController {
             self?.onCompletion = nil
         }
         confirmViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        confirmViewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         present(confirmViewController, animated: true, completion: nil)
     }
 

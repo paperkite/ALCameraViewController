@@ -36,7 +36,8 @@ class ViewController: UIViewController {
             self?.imageView.image = image
             self?.dismiss(animated: true, completion: nil)
         }
-        
+        cameraViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        cameraViewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         present(cameraViewController, animated: true, completion: nil)
     }
     
@@ -45,7 +46,8 @@ class ViewController: UIViewController {
             self?.imageView.image = image
             self?.dismiss(animated: true, completion: nil)
         }
-        
+        libraryViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        libraryViewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         present(libraryViewController, animated: true, completion: nil)
     }
     
